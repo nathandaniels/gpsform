@@ -1,6 +1,6 @@
 #Data Collection using Google Forms & Leaflet
 
-This is a simple web app that uses Google Forms and Leaflet to allow data collection using just a modern web browser. Check out the [demo](https://ovrdc.github.io/gpsform/) and start collecting! Here's a [fullscreen demo](https://ovrdc.github.io/gpsform/app/).
+This is a simple web app that uses Google Forms and Leaflet to allow data collection using just a modern web browser. Check out the [demo](https://ovrdc.github.io/gpsform/) and start collecting! Here's a [fullscreen demo](https://ovrdc.github.io/gpsform/demo/).
 
 <a href="https://ovrdc.github.io/gpsform/">![](https://raw.githubusercontent.com/ovrdc/gpsform/gh-pages/img/gpsform.png)</a>
 
