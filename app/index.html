@@ -28,8 +28,14 @@
   <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
   <style>
     *{font-family: 'Source Sans Pro', sans-serif;}
-    .map {height:70%}
-    #map {position:absolute;left:0;top:0;width:100%;}
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+        width: 100%;
+    }
     .leaflet-popup-content {font-size: medium;}
     .form-group{width:250px;margin-bottom:0;}
     .form-control{resize:none;}
