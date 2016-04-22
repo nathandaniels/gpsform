@@ -6,7 +6,7 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
 
 ##Instructions
 
-1. [Dowload](https://github.com/aogdp/gpsform/archive/gh-pages.zip) the app.
+1. [Dowload](https://github.com/ovrdc/gpsform/archive/gh-pages.zip) the app.
 2. Create a Google Form with Latitude (Short answer), Longitude (Short answer) and Description (Paragraph) fields/questions.
 3. Connect your form resposnes to a spreadsheet.
 4. [Publish](https://support.google.com/docs/answer/37579?hl=en) your response sheet to the web.
