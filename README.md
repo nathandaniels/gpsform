@@ -36,5 +36,7 @@ Could be added but I wanted to keep this app as simple as possible.
 3. More basemaps.
 5. Layer selector.
 6. Figure out a way to collect pictures taken with the device, and push that url to the google sheet. This would take much more coding than is in the initial app. I suggest this be accomplished manually.
+7. Add some sort of accuracy setting.
+8. Get this to work with mock locations on android.
 
 
