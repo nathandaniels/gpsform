@@ -178,6 +178,26 @@
         gps.addTo(map);
       },
     });
+  
+  	var gpsControl =  L.Control.extend({
+  	  options: {
+  		position: 'topleft'
+  	  },
+  
+  	  onAdd: function (map) {
+  		var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-gpsControl');
+  
+  		container.style.backgroundColor = 'white';    
+  		container.style.width = '26px';
+  		container.style.height = '26px';
+  
+  		container.onclick = function(){
+  		  console.log('buttonClicked');
+  		}
+  
+  		return container;
+  	  }
+  	});
 
   </script>
 </body>
