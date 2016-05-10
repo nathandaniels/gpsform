@@ -131,7 +131,7 @@
       });
       if (marker) {
         marker.on('popupclose', function() {
-          if map.hasLayer(marker) {
+          if (map.hasLayer(marker)) {
           	map.removeLayer(marker);
           }
           if (map.hasLayer(circle)) {
