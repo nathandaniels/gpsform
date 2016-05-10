@@ -85,15 +85,17 @@
 
     var marker = L.marker();
     var circle = L.circle();
+    var group = new L.layerGroup().addTo(map);
     var lat, lng; //create variables used throughout the map
 
     function collectData(e) {
-    	if(marker) {
+    	group.clearLayers();
+    	/*if(marker) {
 				map.removeLayer(marker);
     	}
       if (map.hasLayer(circle)) {
         map.removeLayer(circle);
-      }
+      }*/
       //console.log(e);
       lat = e.latlng.lat;
       lng = e.latlng.lng;
@@ -102,14 +104,16 @@
 
       if (e.accuracy) {
         var radius = (e.accuracy / 2) * 3.28084;
-        circle = L.circle(e.latlng, radius).addTo(map);
+        circle = L.circle(e.latlng, radius);
+        group.addLayer(circle);
         accr = e.accuracy * 3.28084;
       }
 
       var form = '<div id="formdiv"><form role="form" id="projectform"><div class="form-group"><div class="form-group"><label for="description" class="requiredField">GPS Collection Form</label><textarea class="form-control" rows="3" id="descrip" placeholder="Text input..."></textarea></div><em class="text-muted">Click submit to add a point at this location.</em><div id="formHelp"></div><hr /><button type="submit" id="submit" class="btn btn-default btn-sm">Submit</button><em style="float:right;" class="text-muted">Accuracy: ' + accr.toFixed(2) + 'ft</em></form></div>';
 
-      marker = L.marker(e.latlng).addTo(map)
-      .bindPopup(form, {maxWidth:400});
+      marker = L.marker(e.latlng);
+      group.addLayer(marker);
+      marker.bindPopup(form, {maxWidth:400});
       
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
@@ -130,14 +134,14 @@
             }
           });
       });
-      if (marker) {
+/*      if (marker) {
         marker.on('popupclose', function() {
         	map.removeLayer(marker);
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
         });
-      }
+      }*/
     }//end collect data
 
     map.on('locationfound', function(e) {
