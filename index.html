@@ -195,6 +195,8 @@
   
   		container.onclick = function(event){
   		  event.preventDefault();
+	      map.originalEvent.preventDefault();
+	      map.click.preventDefault();
   		  console.log('clicked');
   		}
   
