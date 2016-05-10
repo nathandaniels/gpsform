@@ -86,13 +86,7 @@
     var marker, circle, lat, lng; //create variables used throughout the map
 
     function collectData(e) {
-      if (map.hasLayer(marker)) {
-      	map.removeLayer(marker);
-      }
-      if (map.hasLayer(circle)) {
-        map.removeLayer(circle);
-      }
-      
+
       //console.log(e);
       lat = e.latlng.lat;
       lng = e.latlng.lng;
@@ -131,9 +125,7 @@
       });
       if (marker) {
         marker.on('popupclose', function() {
-          if (map.hasLayer(marker)) {
-          	map.removeLayer(marker);
-          }
+	       	map.removeLayer(marker);
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
