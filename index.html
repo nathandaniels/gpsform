@@ -185,8 +185,8 @@
   	  },
   
   	  onAdd: function (map) {
-  		var gpsContainer = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-gpsControl');
-  		var gpsIcon = L.DomUtil.create('span', 'fa fa-first-order', gpsContainer);
+  		var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-gpsControl');
+  		var gpsIcon = L.DomUtil.create('span', 'fa fa-first-order', container);
   
   		container.style.backgroundColor = 'white';    
   		container.style.width = '26px';
