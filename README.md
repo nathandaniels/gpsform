@@ -29,7 +29,7 @@ These are the variables you need to change in index.html:
 9. Start Collecting!
 
 ##Notes
-1. Working with Bluetooth GPS Provider app for mock locations on Android.
+1. Working with Bluetooth GPS Provider app for mock locations on Android/Chrome.
  
 ##Enhancements
 Could be added but I wanted to keep this app as simple as possible.
