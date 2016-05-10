@@ -27,6 +27,9 @@ These are the variables you need to change in index.html:
 6. Upload the app to a webserver or just fork this repository and create a gh-pages branch.
 7. You may also want to change the meta tags at the beginning of the page to reflect your app.
 9. Start Collecting!
+
+##Notes
+1. Working with Bluetooth GPS Provider app for mock locations on Android.
  
 ##Enhancements
 Could be added but I wanted to keep this app as simple as possible.
@@ -37,6 +40,5 @@ Could be added but I wanted to keep this app as simple as possible.
 5. Layer selector.
 6. Figure out a way to collect pictures taken with the device, and push that url to the google sheet. This would take much more coding than is in the initial app. I suggest this be accomplished manually.
 7. Add some sort of accuracy setting.
-8. Get this to work with mock locations on android.
 
 
