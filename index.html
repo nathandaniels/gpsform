@@ -93,7 +93,7 @@
 
       if (e.accuracy) {
         console.log(e.accuracy);
-        var accr = e.accuracy.toFixed(2) * 3.28084;
+        var accr = e.accuracy * 3.28084;
         $('#muted').html('Accuracy: ' + accr + 'ft');
         var radius = (e.accuracy / 2) * 3.28084;
         circle = L.circle(e.latlng, radius).addTo(map);
