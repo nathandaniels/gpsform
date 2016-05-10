@@ -106,7 +106,7 @@
 
       marker.on('popupopen', function() {
         if (e.accuracy) {
-          connsole.log(e.accuracy);
+          console.log(e.accuracy);
           var accr = e.accuracy * 3.28084;
           $('#muted').html('Accuracy: ' + accr.toFixed(2) + 'ft');
         }
