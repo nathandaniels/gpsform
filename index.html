@@ -129,13 +129,13 @@
       });
       if (marker) {
         marker.on('popupclose', function() {
-	       		map.removeLayer(marker);
+        	map.removeLayer(marker);
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
         });
       }
-    }
+    }//end collect data
 
     map.on('locationfound', function(e) {
       collectData(e);
