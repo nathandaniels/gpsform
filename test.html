@@ -134,14 +134,15 @@
             }
           });
       });
-/*      if (marker) {
+      if (marker) {
         marker.on('popupclose', function() {
-        	map.removeLayer(marker);
+        group.clearLayers();
+        /*	map.removeLayer(marker);
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
-        });
-      }*/
+        });*/
+      }
     }//end collect data
 
     map.on('locationfound', function(e) {
