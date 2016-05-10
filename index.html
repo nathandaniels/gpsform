@@ -194,7 +194,8 @@
   		container.style.height = '26px';
   
   		container.onclick = function(){
-  		  console.log('buttonClicked');
+  		  event.preventDefault();
+  		  console.log('clicked');
   		}
   
   		return container;
