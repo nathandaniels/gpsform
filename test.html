@@ -139,11 +139,9 @@
 
     map.on('locationfound', function(e) {
       collectData(e);
-      if (marker) {
-        marker.on('popupclose', function() {
+      marker.on('popupclose', function() {
         group.clearLayers();
-        });
-      }
+      });
     });
     
     setTimeout(function() {
