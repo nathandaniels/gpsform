@@ -110,8 +110,9 @@
         marker.openPopup();
         loc.stop();
         x = 2;
-        if (x != 2) {
+        if (x === 2) {
           marker.on('popupclose', function () {
+            console.log(x + 'closed');
             group.clearLayers();
           });
         }
