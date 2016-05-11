@@ -119,6 +119,9 @@
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
         marker.openPopup();
+        marker.on('popupclose', function() {
+          loc.stop();
+        });
         //loc.stop();
       }, 200);
 
@@ -139,9 +142,6 @@
 
     map.on('locationfound', function(e) {
       collectData(e);
-      marker.on('popupclose', function() {
-        loc.stop();
-      });
     });
     
     setTimeout(function() {
