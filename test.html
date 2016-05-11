@@ -139,6 +139,11 @@
 
     map.on('locationfound', function(e) {
       collectData(e);
+      if (marker) {
+        marker.on('popupclose', function() {
+        group.clearLayers();
+        });
+      }
     });
     
     setTimeout(function() {
@@ -157,10 +162,6 @@
       if (marker) {
         marker.on('popupclose', function() {
         group.clearLayers();
-        /*	map.removeLayer(marker);
-          if (map.hasLayer(circle)) {
-            map.removeLayer(circle);
-          }*/
         });
       }
     });
