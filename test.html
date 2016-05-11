@@ -86,7 +86,7 @@
     var marker = L.marker();
     var circle = L.circle();
     var group = new L.layerGroup().addTo(map);
-    var lat, lng, a; //create variables used throughout the map
+    var lat, lng, x; //create variables used throughout the map
 
     function collectData(e) {
       group.clearLayers();
@@ -108,8 +108,8 @@
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
         marker.openPopup();
-        a = 2;
-        if (a != 1) {
+        x = 2;
+        if (x != 1) {
           marker.on('popupclose', function () {
             group.clearLayers();
           });
@@ -132,7 +132,7 @@
     }//end collect data
 
     map.on('locationfound', function(e) {
-      a = 1;
+      x = 1;
       collectData(e);
       loc.stop();
     });
