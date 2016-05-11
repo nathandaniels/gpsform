@@ -119,7 +119,7 @@
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
         marker.openPopup();
-        loc.stop();
+        //loc.stop();
       }, 200);
 
       marker.on('popupopen', function() {
@@ -140,7 +140,7 @@
     map.on('locationfound', function(e) {
       collectData(e);
       marker.on('popupclose', function() {
-        group.clearLayers();
+        loc.stop();
       });
     });
     
@@ -160,6 +160,7 @@
       if (marker) {
         marker.on('popupclose', function() {
         group.clearLayers();
+        loc.stop();
         });
       }
     });
