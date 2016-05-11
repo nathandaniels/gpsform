@@ -135,6 +135,25 @@
             }
           });
       });
+    }//end collect data
+
+    map.on('locationfound', function(e) {
+      collectData(e);
+    });
+    
+    setTimeout(function() {
+      if(lat) {
+        return false;
+      }else{
+        console.log('no loc');
+        loc.stop();
+        map.setView([39,-82], 10);
+        alert('No location found')
+      }
+    }, 10000);
+
+    map.on('click', function(e) {
+      collectData(e);
       if (marker) {
         marker.on('popupclose', function() {
         group.clearLayers();
@@ -144,32 +163,7 @@
           }*/
         });
       }
-    }//end collect data
-
-    map.on('locationfound', function(e) {
-      collectData(e);
     });
-    
-  setTimeout(function() {
-    if(lat) {
-      return false;
-    }else{
-      console.log('no loc');
-      loc.stop();
-      map.setView([39,-82], 10);
-      alert('No location found')
-    }
-  }, 10000);
-
-	  map.on('click', function(e) {
-	    collectData(e);
-	  });
-
-/*    map.on('stopfollowing', function() {
-      if (marker) { 
-        marker.closePopup();
-      }
-    });*/
 
     //Add form response points
     //Add an empty geojson layer for the google sheet points and create the popup
