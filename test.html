@@ -94,7 +94,7 @@
       lat = e.latlng.lat;
       lng = e.latlng.lng;
       var accr = 'Null';
-      if (e.accuracy < 50) {
+      if (e.accuracy) {
         var radius = (e.accuracy / 2) * 3.28084;
         circle = new L.circle(e.latlng, radius);
         group.addLayer(circle);
