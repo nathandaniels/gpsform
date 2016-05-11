@@ -99,6 +99,7 @@
         circle = new L.circle(e.latlng, radius);
         group.addLayer(circle);
         accr = e.accuracy * 3.28084;
+	}
       var form = '<div id="formdiv"><form role="form" id="projectform"><div class="form-group"><div class="form-group"><label for="description" class="requiredField">GPS Collection Form</label><textarea class="form-control" rows="3" id="descrip" placeholder="Text input..."></textarea></div><em class="text-muted">Click submit to add a point at this location.</em><div id="formHelp"></div><hr /><button type="submit" id="submit" class="btn btn-default btn-sm">Submit</button><em style="float:right;" class="text-muted">Accuracy: ' + accr.toFixed(2) + 'ft</em></form></div>';
       marker = new L.marker(e.latlng);
       group.addLayer(marker);
@@ -132,17 +133,14 @@
             }
           });
       });
-      }//endif statement
-      else{
-      	alert('Accuracy not good enough');
-      	loc.stop();
-        map.setView([39,-82], 10);
-	}
     }//end collect data
 
     map.on('locationfound', function(e) {
       x = 1;
-      collectData(e);
+      if (e.accuracy < 50) {
+      	collectData(e);
+     	}else{
+     	}
      });
     
     setTimeout(function() {
