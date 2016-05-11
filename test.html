@@ -113,7 +113,9 @@
         if (x === 2) {
           marker.on('popupclose', function () {
             console.log(x + 'closed');
-            group.clearLayers();
+            if (x != 1) {
+              group.clearLayers();
+            }
           });
         }
       }, 200);
