@@ -137,6 +137,7 @@
 
     map.on('locationfound', function(e) {
       x = 1;
+      console.log(e.accuracy);
       if (e.accuracy < 50) {
       	collectData(e);
      	}else{
@@ -150,7 +151,7 @@
         console.log('no loc');
         loc.stop();
         map.setView([39,-82], 10);
-        alert('No location found')
+        alert('No location found or accuracy < 50 meters!')
       }
     }, 10000);
 
