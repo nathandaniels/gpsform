@@ -63,6 +63,7 @@
     //--STOP EDITING-------//
     ////////////////////////
 
+    var pointAdded = 0;
     //Add a basemap
     var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     	maxZoom: 19,
@@ -115,11 +116,13 @@
       }, 200);
 
       marker.on('popupopen', function() {
+	pointAdded = 0;
         $('#projectform').submit(function(event) {
             event.preventDefault();
             var descrip = $('#descrip').val();
             //console.log(descrip);
             if (descrip) {
+	      pointAdded = 1;
               //console.log(descrip);
               $('#formdiv').html('<iframe src="https://docs.google.com/forms/d/' + formId + '/formResponse?entry.' + formLat + '=' + lat + '&entry.' + formLng + '=' + lng + '&entry.'+ formText + '=' + descrip + '&submit=Submit" seamless scrolling="no" style="overflow:hidden;height:375px;border:lightgray solid thin;"></iframe>');
             } else {
@@ -130,7 +133,9 @@
       if (marker) {
         marker.on('popupclose', function() {
           map.removeLayer(marker);
-          getPoints();
+	  if (pointAdded == 0) {
+              getPoints();
+	  }
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
