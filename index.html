@@ -106,7 +106,7 @@
       var form = '<div id="formdiv"><form role="form" id="projectform"><div class="form-group"><div class="form-group"><label for="description" class="requiredField">GPS Collection Form</label><textarea class="form-control" rows="3" id="descrip" placeholder="Text input..."></textarea></div><em class="text-muted">Click submit to add a point at this location.</em><div id="formHelp"></div><hr /><button type="submit" id="submit" class="btn btn-default btn-sm">Submit</button><em style="float:right;" class="text-muted">Accuracy: ' + accr.toFixed(2) + 'ft</em></form></div>';
 
       marker = L.marker(e.latlng).addTo(map)
-      .bindPopup(form, {maxWidth:400});
+      .bindPopup(form, {maxWidth:600});
       
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
@@ -129,7 +129,8 @@
       });
       if (marker) {
         marker.on('popupclose', function() {
-        	map.removeLayer(marker);
+          map.removeLayer(marker);
+          getPoints();
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
@@ -170,6 +171,8 @@
       }
     });
 
+  function getPoints() {
+    gps.clearLayers();
     //Grab the google sheet data using tabletop - published to the web not just shared - and use geojson.min.js to convert into proper geojson format
     var tabletop = Tabletop.init( {
       key: gsheet,
@@ -183,7 +186,8 @@
         gps.addTo(map);
       },
     });
-  
+  }
+  getPoints();
 /*  	var gpsControl =  L.Control.extend({
   	  options: {
   		position: 'topleft'
